@@ -1,7 +1,7 @@
 {
-  "name": "starter-kit",
+  "name": "starter-kit-ts",
   "version": "0.0.1",
-  "description": "Starter kit for full-stack JavaScript projects",
+  "description": "Starter kit for full-stack TypeScript projects",
   "private": true,
   "scripts": {
     "prebuild": "npm run cleanup",
@@ -32,15 +32,15 @@
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/textbook/starter-kit.git"
+    "url": "git+https://github.com/textbook/starter-kit-ts.git"
   },
   "author": "Jonathan Sharpe <mail@jonrshar.pe>",
   "contributors": [],
   "license": "ISC",
   "bugs": {
-    "url": "https://github.com/textbook/starter-kit/issues"
+    "url": "https://github.com/textbook/starter-kit-ts/issues"
   },
-  "homepage": "https://github.com/textbook/starter-kit#readme",
+  "homepage": "https://github.com/textbook/starter-kit-ts#readme",
   "devDependencies": {
     "@codeyourfuture/eslint-config-standard": "^2.0.1",
     "@cypress/webpack-preprocessor": "^4.1.5",

@@ -1,6 +1,6 @@
 ---
 applications:
-  - name: starter-kit-cf
+  - name: starter-kit-ts
     buildpacks:
       - https://github.com/cloudfoundry/nodejs-buildpack.git#v1.7.9
     stack: cflinuxfs3

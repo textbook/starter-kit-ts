@@ -53,7 +53,7 @@ jobs:
             branch: master
         - provider: heroku
           api_key: $HEROKU_API_KEY
-          app: starter-kit-ci
+          app: starter-kit-ts
 
 stages:
   - build

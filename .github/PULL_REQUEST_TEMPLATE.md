@@ -13,5 +13,5 @@ Provide links to any associated pull requests or issues. You can use `#123` to l
 - [ ] I have run all of the automated validation using `npm run ship`
 - [ ] I have added myself to the `"contributors"` list in the `package.json` (or do not want to)
 
-[code of conduct]: https://github.com/textbook/starter-kit/blob/master/.github/CODE_OF_CONDUCT.md
-[contributing guide]: https://github.com/textbook/starter-kit/blob/master/.github/CONTRIBUTING.md
+[code of conduct]: https://github.com/textbook/starter-kit-ts/blob/master/.github/CODE_OF_CONDUCT.md
+[contributing guide]: https://github.com/textbook/starter-kit-ts/blob/master/.github/CONTRIBUTING.md

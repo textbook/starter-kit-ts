@@ -1,5 +1,7 @@
 # Starter Kit
 
+[![Build Status](https://travis-ci.com/textbook/starter-kit-ts.svg?branch=master)](https://travis-ci.com/textbook/starter-kit-ts)
+
 [![Deploy to Heroku](https://www.herokucdn.com/deploy/button.svg)](https://heroku.com/deploy)
 
  - [x] Full stack [TypeScript]

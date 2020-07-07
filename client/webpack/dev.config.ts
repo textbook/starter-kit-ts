@@ -1,4 +1,4 @@
-import merge from "webpack-merge";
+import { merge } from "webpack-merge";
 import "webpack-dev-server";
 
 import common from "./common.config";

@@ -1,6 +1,6 @@
 import HtmlWebpackTagsPlugin from "html-webpack-tags-plugin";
 import path from "path";
-import merge from "webpack-merge";
+import { merge } from "webpack-merge";
 
 import common from "./common.config";
 

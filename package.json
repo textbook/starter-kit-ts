@@ -82,7 +82,7 @@
     "style-loader": "^1.2.1",
     "supertest": "^4.0.2",
     "ts-jest": "^25.5.1",
-    "ts-loader": "^7.0.5",
+    "ts-loader": "^8.0.0",
     "ts-node": "^8.10.2",
     "typescript": "^3.9.6",
     "wait-on": "^5.0.3",

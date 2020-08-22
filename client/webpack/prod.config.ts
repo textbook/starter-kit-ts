@@ -25,6 +25,7 @@ export default merge(common, {
 	},
 	plugins: [
 		new HtmlWebpackTagsPlugin({
+			usePublicPath: false,
 			scripts: [
 				{
 					path: "https://unpkg.com/react@16.13.1/umd/react.production.min.js",

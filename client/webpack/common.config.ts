@@ -1,6 +1,7 @@
 import HtmlWebpackPlugin from "html-webpack-plugin";
+import { Configuration } from "webpack";
 
-export default {
+const configuration: Configuration = {
 	resolve: {
 		extensions: [".js", ".jsx", ".ts", ".tsx"],
 	},
@@ -22,6 +23,9 @@ export default {
 			},
 		],
 	},
+	output: {
+		publicPath: "/",
+	},
 	plugins: [
 		new HtmlWebpackPlugin({
 			favicon: "./client/src/favicon.ico",
@@ -29,3 +33,5 @@ export default {
 		}),
 	],
 };
+
+export default configuration;

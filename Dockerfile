@@ -1,4 +1,4 @@
-ARG NODE_RELEASE=12.16.1
+ARG NODE_RELEASE=14.2.0
 
 FROM node:${NODE_RELEASE}-alpine AS build
 
@@ -8,14 +8,15 @@ ENV CYPRESS_INSTALL_BINARY=0
 
 RUN echo "Node $(node -v) / NPM v$(npm -v)"
 
-COPY ./package.json .
-COPY ./package-lock.json .
+WORKDIR /home/node
+
+COPY ./package*.json ./
 
 RUN npm ci
 
 COPY ./tsconfig.json .
-COPY ./client /client
-COPY ./server /server
+COPY ./client ./client
+COPY ./server ./server
 
 RUN npm run build
 
@@ -25,15 +26,16 @@ ARG NODE_RELEASE
 
 LABEL maintainer="Jonathan Sharpe"
 
-COPY --from=build ./package.json .
-COPY --from=build ./package-lock.json .
+WORKDIR /home/node
+
+COPY --from=build /home/node/package*.json ./
 
 ENV NODE_ENV=production
 ENV PORT=80
 
 RUN npm ci
 
-COPY --from=build ./dist /dist
+COPY --from=build /home/node/dist ./dist
 
 EXPOSE 80
 

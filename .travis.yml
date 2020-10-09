@@ -9,6 +9,7 @@ language: node_js
 
 node_js:
   - 14.2.0
+  - 14
   - 12
   - 10
 
@@ -24,6 +25,7 @@ cache:
 
 script:
   - npm run e2e
+  - npm run e2e:dev
 
 jobs:
   include:

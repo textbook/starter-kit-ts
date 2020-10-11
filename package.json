@@ -12,7 +12,7 @@
     "cleanup": "rimraf ./dist/*",
     "predev": "npm run cleanup",
     "dev": "concurrently -k -n \"client,server\" \"npm run dev:client\" \"npm run dev:serve\"",
-    "dev:client": "webpack-dev-server --config client/webpack/dev.config.ts",
+    "dev:client": "webpack serve --config client/webpack/dev.config.ts",
     "dev:serve": "cross-env PORT=3100 nodemon --watch server --ext ts --exec 'node --inspect -r ts-node/register server/server.ts'",
     "e2e": "concurrently -k -s first -n \"app,e2e\" \"npm run serve\" \"npm run e2e:safe\"",
     "e2e:dev": "concurrently -k -s first -n \"dev,e2e\" \"npm run dev\" \"npm run e2e:safe\"",
@@ -85,7 +85,7 @@
     "typescript": "^3.9.7",
     "wait-on": "^5.2.0",
     "webpack": "^4.44.2",
-    "webpack-cli": "^3.3.12",
+    "webpack-cli": "^4.0.0",
     "webpack-dev-server": "^3.11.0",
     "webpack-merge": "^5.2.0"
   },

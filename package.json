@@ -80,7 +80,7 @@
     "style-loader": "^2.0.0",
     "supertest": "^5.0.0",
     "ts-jest": "^25.5.1",
-    "ts-loader": "^8.0.4",
+    "ts-loader": "^8.0.5",
     "ts-node": "^9.0.0",
     "typescript": "^3.9.7",
     "wait-on": "^5.2.0",

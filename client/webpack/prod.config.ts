@@ -3,6 +3,7 @@ import path from "path";
 import { merge } from "webpack-merge";
 
 import common from "./common.config";
+import { devDependencies } from "../../package.json";
 
 export default merge(common, {
 	devtool: "source-map",
@@ -26,28 +27,14 @@ export default merge(common, {
 	plugins: [
 		new HtmlWebpackTagsPlugin({
 			usePublicPath: false,
-			scripts: [
-				{
-					path: "https://unpkg.com/react@16.14.0/umd/react.production.min.js",
-					attributes: {
-						crossorigin: "",
-					},
-					external: {
-						packageName: "react",
-						variableName: "React",
-					},
-				},
-				{
-					path: "https://unpkg.com/react-dom@16.14.0/umd/react-dom.production.min.js",
-					attributes: {
-						crossorigin: "",
-					},
-					external: {
-						packageName: "react-dom",
-						variableName: "ReactDOM",
-					},
-				},
-			],
+			scripts: ([
+				{ packageName: "react", variableName: "React" },
+				{ packageName: "react-dom", variableName: "ReactDOM" },
+			] as const).map(({ packageName, variableName }) => ({
+				attributes: { crossorigin: "" },
+				external: { packageName, variableName },
+				path: `https://unpkg.com/${packageName}@${devDependencies[packageName]}/umd/${packageName}.production.min.js`,
+			})),
 		}),
 	],
 });

@@ -16,8 +16,8 @@ export class App extends Component {
 		return (
 			<main role="main">
 				<div>
-					<img className="logo" data-qa="logo" src={logo} alt="Just the React logo" />
-					<h1 className="message" data-qa="message">{message}</h1>
+					<img className="logo" data-testid="logo" src={logo} alt="Just the React logo" />
+					<h1 className="message" data-testid="message">{message}</h1>
 				</div>
 			</main>
 		);

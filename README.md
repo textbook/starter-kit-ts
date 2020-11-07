@@ -1,6 +1,6 @@
 # Starter Kit
 
-[![Build Status](https://travis-ci.com/textbook/starter-kit-ts.svg?branch=master)](https://travis-ci.com/textbook/starter-kit-ts)
+[![Node.js CI](https://github.com/textbook/starter-kit-ts/workflows/Node.js%20CI/badge.svg)](https://github.com/textbook/starter-kit-ts/actions)
 
 [![Deploy to Heroku](https://www.herokucdn.com/deploy/button.svg)](https://heroku.com/deploy)
 
@@ -13,7 +13,7 @@
  - [x] E2E testing with [Cypress]
  - [x] Dev mode (watch modes for client and server, proxy to avoid CORS issues)
  - [x] Production build (single deployment artifact, React loaded via CDN)
- - [x] [Travis] pipeline
+ - [x] [GitHub Actions] pipeline
  - [x] [Heroku] deployment
  - [x] [Cloud Foundry] deployment
  - [x] [Docker] build
@@ -76,6 +76,7 @@ the automation and it's not using `copy` (which caused cross-platform issues on 
   [ESLint]: https://eslint.org/
   [Express]: https://expressjs.com/
   [Express router]: https://expressjs.com/en/guide/routing.html#express-router
+  [GitHub Actions]: https://github.com/features/actions
   [Heroku]: https://www.heroku.com/
   [Jest]: https://jestjs.io/
   [manual mocks]: https://jestjs.io/docs/en/manual-mocks#mocking-user-modules
@@ -83,7 +84,6 @@ the automation and it's not using `copy` (which caused cross-platform issues on 
   [React]: https://reactjs.org/
   [starter kit]: https://github.com/textbook/cyf-app-starter
   [SuperTest]: https://github.com/visionmedia/supertest
-  [Travis]: https://travis-ci.org/
   [TypeScript]: https://www.typescriptlang.org
   [Webpack]: https://webpack.js.org/
   [wiki]: https://github.com/textbook/starter-kit/wiki

@@ -2,7 +2,7 @@
 applications:
   - name: starter-kit-ts
     buildpacks:
-      - https://github.com/cloudfoundry/nodejs-buildpack.git#v1.7.9
+      - https://github.com/cloudfoundry/nodejs-buildpack.git#v1.7.40
     stack: cflinuxfs3
     disk_quota: 128M
     memory: 128M

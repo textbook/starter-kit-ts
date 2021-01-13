@@ -12,4 +12,5 @@ export default merge(common, {
 			"/api": "http://localhost:3100",
 		},
 	},
+	mode: "development",
 });

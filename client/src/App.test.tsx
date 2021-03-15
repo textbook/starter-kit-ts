@@ -1,47 +1,39 @@
-import { render, RenderResult } from "@testing-library/react";
+import { render, screen } from "@testing-library/react";
+import { rest } from "msw";
+import { setupServer } from "msw/node";
 
 import App from "./App";
 import logo from "./logo.svg";
-import { getMessage } from "./service";
-import { defer, Deferred, tick } from "../../testHelpers";
 
-jest.mock("./service");
+const message = "Foo bar!";
+const server = setupServer(
+	rest.get("/api", (_, res, ctx) => {
+		return res(ctx.status(200), ctx.json({ message }));
+	}),
+);
 
 describe("App", () => {
-	let deferred: Deferred<string>;
-	let wrapper: RenderResult;
+	beforeAll(() => server.listen());
 
-	const message = "Foo bar!";
+	afterEach(() => server.resetHandlers());
 
-	beforeEach(() => {
-		deferred = defer();
-		(getMessage as jest.Mock).mockReturnValue(deferred.promise);
-		wrapper = render(<App />);
-	});
-
-	it("requests the message", () => {
-		expect(getMessage).toHaveBeenCalled();
-	});
+	afterAll(() => server.close());
 
 	it("shows a loading state", async () => {
-		expect(wrapper.getByTestId("message")).toHaveTextContent("Loading...");
+		render(<App />);
+
+		expect(screen.getByTestId("message")).toHaveTextContent("Loading...");
 	});
 
-	describe("when request resolves", () => {
-		beforeEach(async () => {
-			deferred.resolve(message);
-			await tick();
-		});
+	it("shows an image", async () => {
+		render(<App />);
+		const element = screen.getByTestId("logo");
+		expect(element).toHaveAttribute("alt", "Just the React logo");
+		expect(element).toHaveAttribute("src", logo);
+	});
 
-		it("says 'Hello, world!'", async () => {
-			const element = wrapper.getByTestId("message");
-			expect(element).toHaveTextContent(message);
-		});
-
-		it("shows an image", async () => {
-			const element = wrapper.getByTestId("logo");
-			expect(element).toHaveAttribute("alt", "Just the React logo");
-			expect(element).toHaveAttribute("src", logo);
-		});
+	it("shows the message when the request resolves", async () => {
+		render(<App />);
+		await expect(screen.findByText(message)).resolves.toBeInTheDocument();
 	});
 });

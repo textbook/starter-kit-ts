@@ -17,10 +17,6 @@
       "extends": [
         "plugin:jest/recommended"
       ],
-      "globals": {
-        "defer": false,
-        "tick": false
-      },
       "rules": {
         "jest/expect-expect": [
           "error",

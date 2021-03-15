@@ -1,27 +1,24 @@
-import { Component, ReactNode } from "react";
+import { FC, useEffect, useState } from "react";
 
 import "./App.css";
 import { getMessage } from "./service";
 import logo from "./logo.svg";
 
-export class App extends Component {
-	state = { message: "Loading..." };
+const App: FC = () => {
+	const [message, setMessage] = useState("Loading...");
 
-	componentDidMount(): void {
-		getMessage().then((message) => this.setState({ message }));
-	}
+	useEffect(() => {
+		getMessage().then(setMessage);
+	}, []);
 
-	render(): ReactNode {
-		const { message } = this.state;
-		return (
-			<main role="main">
-				<div>
-					<img className="logo" data-testid="logo" src={logo} alt="Just the React logo" />
-					<h1 className="message" data-testid="message">{message}</h1>
-				</div>
-			</main>
-		);
-	}
-}
+	return (
+		<main role="main">
+			<div>
+				<img className="logo" data-testid="logo" src={logo} alt="Just the React logo" />
+				<h1 className="message" data-testid="message">{message}</h1>
+			</div>
+		</main>
+	);
+};
 
 export default App;

@@ -1,6 +1,6 @@
 import { render, RenderResult } from "@testing-library/react";
 
-import { App } from "./App";
+import App from "./App";
 import logo from "./logo.svg";
 import { getMessage } from "./service";
 import { defer, Deferred, tick } from "../../testHelpers";

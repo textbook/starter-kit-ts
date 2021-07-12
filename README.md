@@ -1,3 +1,5 @@
+> **Note** this is no longer actively maintained, but it does show how [the base repo] can be adapted to TypeScript usage.
+
 # Starter Kit
 
 [![Node.js CI](https://github.com/textbook/starter-kit-ts/workflows/Node.js%20CI/badge.svg)](https://github.com/textbook/starter-kit-ts/actions)
@@ -84,6 +86,7 @@ the automation and it's not using `copy` (which caused cross-platform issues on 
   [React]: https://reactjs.org/
   [starter kit]: https://github.com/textbook/cyf-app-starter
   [SuperTest]: https://github.com/visionmedia/supertest
+  [the base repo]: https://github.com/textbook/starter-kit
   [TypeScript]: https://www.typescriptlang.org
   [Webpack]: https://webpack.js.org/
   [wiki]: https://github.com/textbook/starter-kit/wiki
